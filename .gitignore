@@ -1,0 +1,19 @@
+# Environment variables
+.env
+.env.*
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor settings
+.vscode/settings.json
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
