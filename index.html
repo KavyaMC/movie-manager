@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie Collection Manager</title>
+    <link
+        href="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css](https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css)"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="container mt-4">
+
+        <header class="mb-4">
+            <h1>Movie Collection Manager</h1>
+            <p class="lead">Keep track of every movie you've watched — and everything still on your list.</p>
+        </header>
+
+        <section class="card p-3 mb-3">
+            <h2>Add a Movie</h2>
+            <form id="movie-form">
+                <div class="mb-3">
+                    <label for="title-input" class="form-label">Title</label>
+                    <input type="text" id="title-input" class="form-control" placeholder="Movie title">
+                </div>
+                <div class="mb-3">
+                    <label for="director-input" class="form-label">Director</label>
+                    <input type="text" id="director-input" class="form-control" placeholder="Director">
+                </div>
+                <div class="mb-3">
+                    <label for="year-input" class="form-label">Year</label>
+                    <input type="number" id="year-input" class="form-control" placeholder="e.g. 1994">
+                </div>
+                <div class="mb-3">
+                    <label for="genre-input" class="form-label">Genre</label>
+                    <select id="genre-input" class="form-select">
+                        <option value="Action">Action</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Sci-Fi">Sci-Fi</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Documentary">Documentary</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="rating-input" class="form-label">Your Rating (1–5)</label>
+                    <input type="number" id="rating-input" class="form-control" min="1" max="5" placeholder="1–5">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Movie</button>
+            </form>
+        </section>
+
+        <section class="card p-3 mb-3">
+            <h2>Search Collection</h2>
+            <input type="text" id="search-input" class="form-control" placeholder="Search by title or director">
+        </section>
+
+        <section class="card p-3 mb-3">
+            <h2>Sort Collection</h2>
+            <div class="btn-group">
+                <button type="button" id="sort-title" class="btn btn-secondary">Title</button>
+                <button type="button" id="sort-year" class="btn btn-secondary">Year</button>
+                <button type="button" id="sort-rating" class="btn btn-secondary">Rating</button>
+            </div>
+        </section>
+
+        <section class="card p-3 mb-3">
+            <h2>Filter Collection</h2>
+            <div class="btn-group">
+                <button type="button" id="show-all" class="btn btn-secondary">All</button>
+                <button type="button" id="show-watched" class="btn btn-secondary">Watched</button>
+                <button type="button" id="show-unwatched" class="btn btn-secondary">Unwatched</button>
+            </div>
+        </section>
+
+        <section class="card p-3 mb-3">
+            <h2>Collection Statistics</h2>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    Total Movies:
+                    <span id="total-count" aria-live="polite" aria-atomic="true">0</span>
+                </li>
+                <li class="list-group-item">
+                    Watched:
+                    <span id="watched-count" aria-live="polite" aria-atomic="true">0</span>
+                </li>
+                <li class="list-group-item">
+                    Unwatched:
+                    <span id="unwatched-count" aria-live="polite" aria-atomic="true">0</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="card p-3">
+            <h2>Your Collection</h2>
+            <ul id="movie-list" class="list-group">
+            </ul>
+        </section>
+        <section aria-label="Status messages">
+            <p id="status" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
